@@ -1,0 +1,121 @@
+fmc-rds-db-bia.json -> fmc-rds-db-policy.json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "rds:CreateDBInstance",
+                "rds:AddTagsToResource",
+                "rds:DescribeDBInstances",
+                "rds:DeleteDBInstance",
+                "rds:ModifyDBInstance",
+                "rds:CreateDBSubnetGroup",
+                "rds:DescribeDBSubnetGroups",
+                "rds:ListTagsForResource",
+                "rds:DeleteDBSubnetGroup"
+            ],
+            "Resource": "arn:aws:rds:us-east-1:637423458437:*"
+        }
+    ]
+}
+Esta politica permite que servicos da AWS criem, excluam e gerenciem instancias de banco de dados do Amazon Relational Database Service (Amazon RDS) em seu nome.
+
+fmc-ssm-ecs-policy.json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:GetParameter"
+            ],
+            "Resource": "arn:aws:ssm:us-east-1::parameter/*"
+        }
+    ]
+}
+Esta politica permite que servicos da AWS obtenham parametros do AWS Systems Manager Parameter Store em seu nome.
+
+fmc-ecs-cluster-policy.json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecs:CreateCluster",
+                "ecs:DeleteCluster",
+                "ecs:DescribeClusters",
+                "ecs:ListClusters",
+                "ecs:UpdateClusterSettings",
+                "ecs:CreateCapacityProvider",
+                "ecs:DeleteCapacityProvider",
+                "ecs:DescribeCapacityProviders",
+                "ecs:UpdateCapacityProvider",
+                "ecs:PutClusterCapacityProviders",
+                "ecs:RegisterTaskDefinition",
+                "ecs:TagResource"
+            ],
+            "Resource": "arn:aws:ecs:us-east-1:637423458437:*"
+        }
+    ]
+}
+Esta politica permite que servicos da AWS criem, excluam e gerenciem clusters do Amazon Elastic Container Service (Amazon ECS) em seu nome.
+
+fmc-ecr-policy.json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:CreateRepository",
+                "ecr:DeleteRepository",
+                "ecr:DescribeRepositories",
+                "ecr:PutImage",
+                "ecr:BatchGetImage",
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:InitiateLayerUpload",
+                "ecr:UploadLayerPart",
+                "ecr:CompleteLayerUpload",
+                "ecr:PutImageScanningConfiguration",
+                "ecr:PutImageTagMutability",
+                "ecr:PutLifecyclePolicy",
+                "ecr:GetLifecyclePolicy",
+                "ecr:DeleteLifecyclePolicy",
+                "ecr:GetRepositoryPolicy",
+                "ecr:SetRepositoryPolicy",
+                "ecr:ListTagsForResource"
+            ],
+            "Resource": "arn:aws:ecr:us-east-1:637423458437:*"
+        }
+    ]
+}
+Esta politica permite que servicos da AWS criem, excluam e gerenciem repositorios de imagens no Amazon Elastic Container Registry (Amazon ECR) em seu nome.
+
+fmc-cloudwatch-logs-policy.json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:DeleteLogGroup",
+                "logs:DescribeLogGroups",
+                "logs:PutRetentionPolicy",
+                "logs:PutLogEvents",
+                "logs:DescribeLogStreams",
+                "logs:GetLogEvents",
+                "logs:TagResource",
+                "logs:ListTagsForResource"
+            ],
+            "Resource": "arn:aws:logs:us-east-1:637423458437:*"
+        }
+    ]
+}
+Esta politica permite que servicos da AWS criem, excluam e gerenciem grupos de logs, streams de logs e eventos de logs no CloudWatch Logs em seu nome.
+
+pliticas atribuida ao usuário programatico:
+AmazonEC2ContainerRegistryFullAccess
+CloudWatchFullAccess ou CloudWatchFullAccessV2
